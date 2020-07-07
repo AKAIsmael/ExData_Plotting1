@@ -1,5 +1,5 @@
 library(lubridate)
-hhpc <- read.delim("household_power_consumption.txt",header= TRUE, sep=";")
+hhpc <- read.delim("household_power_consumption.txt",header= TRUE, sep=";") #file read from the current directory
 hhpc <-  hhpc[(hhpc$Date=="1/2/2007") | (hhpc$Date =="2/2/2007" ),]
 hhpc$tme <- dmy_hms(paste(hhpc$Date, " ", hhpc$Time))
 hhpc$Sub_metering_1 <- as.numeric(hhpc$Sub_metering_1)
